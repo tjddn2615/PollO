@@ -67,7 +67,7 @@ extern unsigned int sysctl_pollo_size_threshold;
 
 struct cpufreq_policy {
 
-	//sungwoo modify
+	//sungwoo modify poll_flag init
 	unsigned int poll_flag;
 
 	/* CPUs sharing clock, require sw coordination */
