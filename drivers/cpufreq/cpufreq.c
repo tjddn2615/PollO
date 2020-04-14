@@ -2009,7 +2009,15 @@ int __cpufreq_driver_target(struct cpufreq_policy *policy,
 		//printk("changed");
 		index=sysctl_pollo_threshold;
 	}
-	
+
+
+    for(int i=0;i<6;i++){
+		if(policy->poll_flag > sysctl_pollo_size_threshold*i){
+		    index=sysctl_pollo_threshold-i;
+		}
+	}
+
+
 	if (policy->poll_flag > sysctl_pollo_size_threshold*6) {	
 		index=sysctl_pollo_threshold-6;
 
