@@ -2012,9 +2012,10 @@ int __cpufreq_driver_target(struct cpufreq_policy *policy,
 
 
 	//sungwoo modify io_sensitivity
-    for(int i=0;i<6;i++){
+    for(int i=6;i>-1;i++){
 		if(policy->poll_flag > sysctl_pollo_size_threshold*i){
 		    index=sysctl_pollo_threshold-i;
+			break;
 		}
 	}
 
