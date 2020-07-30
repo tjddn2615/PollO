@@ -1,4 +1,4 @@
-This is the OpenSource Code for my Paper - Sungwoo Lee, Yongju Song, and Young Ik Eom, "PollO: Polling-aware On-demand Governor for Improving Power Efficiency," IMCOM 2020 (IEEE International Conference on Ubiquitous Information Management and Communication), 2020-01-04.
+This is the Code for my Paper - Sungwoo Lee, Yongju Song, and Young Ik Eom, "PollO: Polling-aware On-demand Governor for Improving Power Efficiency," IMCOM 2020 (IEEE International Conference on Ubiquitous Information Management and Communication), 2020-01-04.
 
 I edited CPU ondemand governor to concern polling I/O completion method to offer additional power efficiency option.
 
