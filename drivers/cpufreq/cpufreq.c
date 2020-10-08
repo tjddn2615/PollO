@@ -2012,37 +2012,13 @@ int __cpufreq_driver_target(struct cpufreq_policy *policy,
 
 
 	//sungwoo modify io_sensitivity
-    for(int i=6;i>-1;i++){
+    	for(int i=6;i>-1;i++){
 		if(policy->poll_flag > sysctl_pollo_size_threshold*i){
 		    index=sysctl_pollo_threshold-i;
 			break;
 		}
 	}
 
-
-	if (policy->poll_flag > sysctl_pollo_size_threshold*6) {	
-		index=sysctl_pollo_threshold-6;
-
-	}else if (policy->poll_flag <= sysctl_pollo_size_threshold*6 && policy->poll_flag > sysctl_pollo_size_threshold*5) {	
-		index=sysctl_pollo_threshold-5;
-
-	}else if (policy->poll_flag <= sysctl_pollo_size_threshold*5 && policy->poll_flag > sysctl_pollo_size_threshold*4) {	
-		index=sysctl_pollo_threshold-4;
-		//printk("sungwoo 3, poll_flag=%d, index: %d",policy->poll_flag, index);
-	}else if(policy->poll_flag <= sysctl_pollo_size_threshold*4 && policy->poll_flag > sysctl_pollo_size_threshold*3){
-		//index=9;
-		index=sysctl_pollo_threshold-3;
-		//printk("sungwoo 3, poll_flag=%d, index: %d",policy->poll_flag, index);
-	}else if(policy->poll_flag <= sysctl_pollo_size_threshold*3 && policy->poll_flag > sysctl_pollo_size_threshold*2){
-		index=sysctl_pollo_threshold-2;
-		//printk("sungwoo 2, poll_flag=%d, index: %d",policy->poll_flag, index);
-	}else if(policy->poll_flag <= sysctl_pollo_size_threshold*2 && policy->poll_flag > sysctl_pollo_size_threshold){
-		index=sysctl_pollo_threshold-1;
-		//printk("sungwoo 1, poll_flag=%d, index: %d",policy->poll_flag, index);
-	}else{
-		index=sysctl_pollo_threshold;
-		//printk("sungwoo 0, poll_flag=%d, index: %d",policy->poll_flag, index);
-	}
 	return __target_index(policy, index);
 }
 EXPORT_SYMBOL_GPL(__cpufreq_driver_target);
